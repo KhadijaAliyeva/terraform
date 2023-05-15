@@ -3,6 +3,10 @@ pipeline {
 
   parameters {
     string(name: 'instance_name', defaultValue: '', description: 'The name of the EC2 instance to create or destroy')
+    string(name: 'aws_access_key_id', defaultValue: '', description: 'The AWS access key ID')
+    string(name: 'aws_secret_access_key', defaultValue: '', description: 'The AWS secret access key')
+    string(name: 'aws_region', defaultValue: 'us-west-2', description: 'The AWS region')
+    string(name: 'action', defaultValue: '', description: 'The action to perform (create or destroy)')
   }
 
   stages {

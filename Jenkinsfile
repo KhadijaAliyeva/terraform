@@ -8,7 +8,9 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: https://github.com/KhadijaAliyeva/terraform.git]]])
+        checkout([$class: 'GitSCM',
+                  branches: [[name: '*/main']], // Replace with the desired branch
+                  userRemoteConfigs: [[url: 'https://github.com/KhadijaAliyeva/terraform.git']]])
       }
     }
 

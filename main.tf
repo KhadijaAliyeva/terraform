@@ -15,9 +15,3 @@ variable "instance_id" {
   type    = string
   default = ""
 }
-resource "null_resource" "destroy" {
-  provisioner "local-exec" {
-    command = "terraform destroy -auto-approve -var aws_region=${var.aws_region} -var instance_id=${var.instance_id}"
-  }
-  depends_on = [aws_instance.example]
-}
